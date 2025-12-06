@@ -1,0 +1,12 @@
+.title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'system-ui, "Segoe UI",Roboto,Helvetica,Arial,sans-serif';
+    margin-bottom: 24px;
+}
+
+.text {
+    font-size: 1rem;
+    text-align: center;
+}
