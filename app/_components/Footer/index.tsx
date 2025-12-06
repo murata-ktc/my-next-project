@@ -7,5 +7,13 @@ export default function Footer() {
                 <ul className={styles.items}>
                     <li className={styles.items}>
                         <a href="/members">メンバー</a>
+                    </li>
+                    <li className={styles.items}>
+                        <a href="/contact">お問い合せ</a>
+                    </li>
                 </ul>
-    )
+            </nav>
+            <p className={styles.cr}>© SIMPLE. All Rights Reserved 2024</p>
+        </footer>
+    );
+}

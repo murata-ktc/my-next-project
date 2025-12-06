@@ -14,7 +14,7 @@ export default function NewsList({ news }: Props) {
         return <p>記事がありません。</p>;
     }
     return (
-        <ul>
+        <ul>21
             {news.map((article) => (
                 <li key={article.id} className={styles.list}>
                     <div className={styles.link}>
