@@ -7,11 +7,11 @@ function valibateEmail(email: string) {
 
 export async function createContactData(_prevStste: any, formData: FormData) {
     const rawFormData = {
-        lastname: formData.get("lastname") as string;
-        firstname: formData.get("firstname") as string;
-        company: formData.get("company") as string;
-        email: formData.get("email") as string;
-        message: formData.get("message") as string;
+        lastname: formData.get("lastname") as string,
+        firstname: formData.get("firstname") as string,
+        company: formData.get("company") as string,
+        email: formData.get("email") as string,
+        message: formData.get("message") as string,
     };
 
     if (!rawFormData.lastname) {
@@ -25,11 +25,31 @@ export async function createContactData(_prevStste: any, formData: FormData) {
             status: "error",
             message: "名を入力してください。",
         };
-    if (!rawFormData.email) {
+    }
+    if (!rawFormData.company) {
         return {
             status: "error",
             message: "会社名を入力してください",
             };
     }
+    if (!rawFormData.email) {
+        return {
+            status: "error",
+            message: "メールアドレスを入力してください"
+        };
+    }
+    if (!valibateEmail(rawFormData.email)) {
+        return {
+            status: "error",
+            message: "メールアドレスの形式が誤っています",
+        };
+    }
+    if (!rawFormData.message) {
+        return {
+            status: "error",
+            message: "メッセージを入力してください",
+        };
+    }
 
+    return { status: "success", message: "OK" };
 }
